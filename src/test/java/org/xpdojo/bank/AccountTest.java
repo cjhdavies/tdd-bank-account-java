@@ -42,4 +42,12 @@ public class AccountTest {
         account.withdraw(30);
         assertThat(account.balance()).isEqualTo(-40);
     }
+
+    @Test
+    public void depositingAndWithdrawingUpdatesBalance() {
+        Account account = new Account();
+        account.deposit(100);
+        account.withdraw(50);
+        assertThat(account.balance()).isEqualTo(50);
+    }
 }
