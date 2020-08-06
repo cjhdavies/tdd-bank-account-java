@@ -50,4 +50,14 @@ public class AccountTest {
         account.withdraw(50);
         assertThat(account.balance()).isEqualTo(50);
     }
+
+    @Test
+    public void multipleDepositsAndWithdrawalsUpdateBalance() {
+        Account account = new Account();
+        account.deposit(500);
+        account.withdraw(400);
+        account.withdraw(200);
+        account.deposit(300);
+        assertThat(account.balance()).isEqualTo(200);
+    }
 }
